@@ -9,5 +9,6 @@
 - "!include public_company_users.yaml"
 - "!include public_customer_comments.yaml"
 - "!include public_customers.yaml"
+- "!include public_nuno_table.yaml"
 - "!include storage_buckets.yaml"
 - "!include storage_files.yaml"
