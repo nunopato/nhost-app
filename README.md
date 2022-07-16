@@ -12,7 +12,7 @@
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Tailwind UI](https://tailwindui.com/)
 
-### Some features showcased in this example
+### Features showcased in this example
 
 - Postgres
 - GraphQL
