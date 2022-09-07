@@ -10,6 +10,7 @@
 - "!include public_company_users.yaml"
 - "!include public_customer_comments.yaml"
 - "!include public_customers.yaml"
+- "!include public_nuno_2.yaml"
 - "!include public_orders.yaml"
 - "!include public_table_nuno.yaml"
 - "!include public_warehouses.yaml"
