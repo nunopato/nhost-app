@@ -2,6 +2,17 @@ table:
   name: customer_comments
   schema: public
 configuration:
+  column_config:
+    created_at:
+      custom_name: createdAt
+    customer_id:
+      custom_name: customerId
+    file_id:
+      custom_name: fileId
+    updated_at:
+      custom_name: updatedAt
+    user_id:
+      custom_name: userId
   custom_column_names:
     created_at: createdAt
     customer_id: customerId
@@ -19,65 +30,65 @@ configuration:
     update: updateCustomerComments
     update_by_pk: updateCustomerComment
 object_relationships:
-- name: customer
-  using:
-    foreign_key_constraint_on: customer_id
-- name: file
-  using:
-    foreign_key_constraint_on: file_id
-- name: user
-  using:
-    foreign_key_constraint_on: user_id
+  - name: customer
+    using:
+      foreign_key_constraint_on: customer_id
+  - name: file
+    using:
+      foreign_key_constraint_on: file_id
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
 insert_permissions:
-- permission:
-    backend_only: false
-    check:
-      customer:
-        company:
-          companyUsers:
-            user_id:
-              _eq: X-Hasura-User-Id
-    columns:
-    - customer_id
-    - file_id
-    - text
-    set:
-      user_id: x-hasura-user-id
-  role: user
+  - role: user
+    permission:
+      check:
+        customer:
+          company:
+            companyUsers:
+              user_id:
+                _eq: X-Hasura-User-Id
+      set:
+        user_id: x-hasura-user-id
+      columns:
+        - customer_id
+        - file_id
+        - text
 select_permissions:
-- permission:
-    columns:
-    - created_at
-    - customer_id
-    - file_id
-    - id
-    - text
-    - updated_at
-    - user_id
-    filter:
-      customer:
-        company:
-          companyUsers:
-            user_id:
-              _eq: X-Hasura-User-Id
-  role: user
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - customer_id
+        - file_id
+        - id
+        - text
+        - updated_at
+        - user_id
+      filter:
+        customer:
+          company:
+            companyUsers:
+              user_id:
+                _eq: X-Hasura-User-Id
 update_permissions:
-- permission:
-    check: null
-    columns: []
-    filter:
-      customer:
-        company:
-          companyUsers:
-            user_id:
-              _eq: X-Hasura-User-Id
-  role: user
+  - role: user
+    permission:
+      columns: []
+      filter:
+        customer:
+          company:
+            companyUsers:
+              user_id:
+                _eq: X-Hasura-User-Id
+      check: null
 delete_permissions:
-- permission:
-    filter:
-      customer:
-        company:
-          companyUsers:
-            user_id:
-              _eq: X-Hasura-User-Id
-  role: user
+  - role: user
+    permission:
+      backend_only: false
+      filter:
+        customer:
+          company:
+            companyUsers:
+              user_id:
+                _eq: X-Hasura-User-Id
