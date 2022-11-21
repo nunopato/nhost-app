@@ -1,3 +1,3 @@
 module.exports = (req, res) => {
-  res.send("All right!");
+  res.send("ola pingerreco");
 }
