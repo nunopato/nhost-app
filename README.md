@@ -1,5 +1,4 @@
 # CRM Example App with Nhost V2 [WIP]
-something
 
 ![Customers](assets/customers.png)
 
