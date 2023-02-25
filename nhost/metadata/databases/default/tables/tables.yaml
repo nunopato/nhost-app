@@ -10,6 +10,7 @@
 - "!include public_company_users.yaml"
 - "!include public_customer_comments.yaml"
 - "!include public_customers.yaml"
+- "!include public_openocean_deals.yaml"
 - "!include public_orders.yaml"
 - "!include public_warehouses.yaml"
 - "!include storage_buckets.yaml"
