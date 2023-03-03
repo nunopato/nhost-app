@@ -6,6 +6,7 @@
 - "!include auth_user_roles.yaml"
 - "!include auth_user_security_keys.yaml"
 - "!include auth_users.yaml"
+- "!include public_armilar_deals.yaml"
 - "!include public_companies.yaml"
 - "!include public_company_users.yaml"
 - "!include public_customer_comments.yaml"
